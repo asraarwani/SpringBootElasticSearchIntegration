@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "00f089de-5190-4079-8bae-9f3a74a12e91",
+		"name": "SpringBoot_ElasticSearch_Integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Native Query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employee/native-query?firstName=Asraar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"native-query"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Asraar"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employee/query?firstName=Asraar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"query"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Asraar"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criteria Query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employee/criteria?firstName=Asraar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"criteria"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Asraar"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee By Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employee?id=1005",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1005"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employee?id=1000",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Multiple Employees",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": 1002,\r\n        \"firstName\": \"Ken\",\r\n        \"lastName\": \"Mills\",\r\n        \"email\": \"kenmills12@gmail.com\",\r\n        \"age\": 42,\r\n        \"addresses\": [\r\n            {\r\n                \"addressLine1\": \"22nd Cross Main Street Delware, USA\",\r\n                \"zip\": 102341\r\n            }\r\n        ],\r\n        \"joiningDate\": \"2023-01-16T23:10:25.123\",\r\n        \"gender\": \"Male\"\r\n    },\r\n     {\r\n        \"id\": 1003,\r\n        \"firstName\": \"Pritam\",\r\n        \"lastName\": \"Kumar\",\r\n        \"email\": \"pritam88@gmail.com\",\r\n        \"age\": 28,\r\n        \"addresses\": [\r\n            {\r\n                \"addressLine1\": \"23rd Cross HSR Layout Bangalore\",\r\n                \"zip\": 560038\r\n            }\r\n        ],\r\n        \"joiningDate\": \"2023-01-10T23:10:25.123\",\r\n        \"gender\": \"Male\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/employee/save-all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"save-all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1001,\r\n    \"firstName\": \"Asif\",\r\n    \"lastName\": \"Wani\",\r\n    \"email\": \"asifwani@hotmail.com\",\r\n    \"age\": 35,\r\n    \"addresses\": [\r\n        {\r\n            \"addressLine1\": \"166 1st Main Road 5th Cross Doddanekundi\",\r\n            \"zip\": 560037\r\n        }\r\n    ],\r\n    \"joiningDate\": \"2024-01-16T23:10:25.123\",\r\n    \"gender\": \"Male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/employee/save",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"save"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

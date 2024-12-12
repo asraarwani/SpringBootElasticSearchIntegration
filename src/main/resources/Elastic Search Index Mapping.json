@@ -1,0 +1,50 @@
+{
+  "asraarindex1": {
+    "mappings": {
+      "properties": {
+        "_class": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "addresses": {
+          "type": "nested",
+          "properties": {
+            "addressLine1": {
+              "type": "text"
+            },
+            "zip": {
+              "type": "integer"
+            }
+          }
+        },
+        "age": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "keyword"
+        },
+        "firstName": {
+          "type": "text"
+        },
+        "gender": {
+          "type": "text"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "joiningDate": {
+          "type": "date",
+          "format": "uuuu-MM-dd'T'HH:mm:ss.SSS"
+        },
+        "lastName": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}

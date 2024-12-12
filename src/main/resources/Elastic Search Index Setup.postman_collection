@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "834ed4f3-ec3a-423c-bb5e-f04f20c954c1",
+		"name": "Elastic Search Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:9200/",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "r=B9EvET6VykQNfdilL+",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9200/",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Index",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "r=B9EvET6VykQNfdilL+",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"settings\": {\r\n        \"index\": {\r\n            \"number_of_shards\": 2,\r\n            \"number_of_replicas\": 1\r\n        }\r\n    },\r\n    \"mappings\": {\r\n        \"properties\": {\r\n            \"id\": {\r\n                \"type\": \"integer\"\r\n            },\r\n            \"firstName\": {\r\n                \"type\": \"text\"\r\n            },\r\n            \"lastName\": {\r\n                \"type\": \"text\"\r\n            },\r\n            \"age\": {\r\n                \"type\": \"integer\"\r\n            },\r\n            \"email\": {\r\n                \"type\": \"keyword\"\r\n            }\r\n        }\r\n    },\r\n    \"aliases\": {\r\n        \"asraar-index-1\": {}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/asraarindex1",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"asraarindex1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Index Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "r=B9EvET6VykQNfdilL+",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/asraarindex1/_mapping?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"asraarindex1",
+						"_mapping"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Doc In Index",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "r=B9EvET6VykQNfdilL+",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 35,\r\n    \"email\": \"asraar_tjc_2010@hotmail.com\",\r\n    \"firstName\": \"Asraar\",\r\n    \"lastName\": \"Wani\",\r\n    \"id\": 1000,\r\n    \"gender\": \"Male\",\r\n    \"joiningDate\": \"2024-01-16T23:10:25.123\",\r\n    \"addresses\": [\r\n        {\r\n            \"addressLine1\": \"2532/3/2 1st Main Road HSR Layout\",\r\n            \"zip\": 560068\r\n        },\r\n        {\r\n            \"addressLine1\": \"166 1st Main Road 5th Cross Doddanekundi\",\r\n            \"zip\": 560037\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/asraarindex1/_doc/1000",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"asraarindex1",
+						"_doc",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Doc by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "r=B9EvET6VykQNfdilL+",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/asraarindex1/_doc/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"asraarindex1",
+						"_doc",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get document count",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "r=B9EvET6VykQNfdilL+",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/asraarindex1/_count",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"asraarindex1",
+						"_count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Mappings Of Index",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "r=B9EvET6VykQNfdilL+",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"properties\": {\r\n        \"gender\": {\r\n            \"type\": \"text\"\r\n        },\r\n        \"joiningDate\": {\r\n            \"type\": \"date\",\r\n            \"format\": \"uuuu-MM-dd'T'HH:mm:ss.SSS\"\r\n        },\r\n        \"addresses\": {\r\n            \"type\": \"nested\",\r\n            \"properties\": {\r\n                \"addressLine1\": {\r\n                    \"type\": \"text\"\r\n                },\r\n                \"zip\": {\r\n                    \"type\": \"integer\"\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/asraarindex1/_mapping",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"asraarindex1",
+						"_mapping"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
