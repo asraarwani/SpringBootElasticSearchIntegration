@@ -1,4 +1,4 @@
-package com.jpmchase.www.modal;
+package com.organization.www.modal;
 
 import lombok.Data;
 import org.springframework.data.elasticsearch.annotations.Field;

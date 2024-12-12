@@ -1,6 +1,6 @@
-package com.jpmchase.www.service;
+package com.organization.www.service;
 
-import com.jpmchase.www.modal.Employee;
+import com.organization.www.modal.Employee;
 import org.springframework.data.elasticsearch.client.elc.NativeQuery;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.SearchHits;

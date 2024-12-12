@@ -1,9 +1,9 @@
-package com.jpmchase.www.controller;
+package com.organization.www.controller;
 
-import com.jpmchase.www.modal.Employee;
-import com.jpmchase.www.service.EmployeeOperationsService;
-import com.jpmchase.www.service.EmployeeQueryNativeStringCriteriaService;
-import com.jpmchase.www.service.EmployeeService;
+import com.organization.www.modal.Employee;
+import com.organization.www.service.EmployeeOperationsService;
+import com.organization.www.service.EmployeeQueryNativeStringCriteriaService;
+import com.organization.www.service.EmployeeService;
 import org.springframework.data.elasticsearch.core.SearchHits;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

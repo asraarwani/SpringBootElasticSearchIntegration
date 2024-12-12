@@ -1,8 +1,5 @@
-package com.jpmchase.www.modal;
+package com.organization.www.modal;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.DateFormat;

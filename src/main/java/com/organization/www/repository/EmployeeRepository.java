@@ -1,6 +1,6 @@
-package com.jpmchase.www.repository;
+package com.organization.www.repository;
 
-import com.jpmchase.www.modal.Employee;
+import com.organization.www.modal.Employee;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 

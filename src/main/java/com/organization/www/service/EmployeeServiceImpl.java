@@ -1,7 +1,7 @@
-package com.jpmchase.www.service;
+package com.organization.www.service;
 
-import com.jpmchase.www.modal.Employee;
-import com.jpmchase.www.repository.EmployeeRepository;
+import com.organization.www.modal.Employee;
+import com.organization.www.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

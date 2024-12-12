@@ -1,4 +1,4 @@
-package com.jpmchase.www.config;
+package com.organization.www.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.elasticsearch.client.ClientConfiguration;
