@@ -110,7 +110,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/employee?id=1000",
+					"raw": "localhost:8080/employee?id=1006",
 					"host": [
 						"localhost"
 					],
@@ -121,7 +121,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "1000"
+							"value": "1006"
 						}
 					]
 				}
@@ -179,6 +179,34 @@
 					"path": [
 						"employee",
 						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": 1005,\r\n        \"firstName\": \"Ken\",\r\n        \"lastName\": \"Mills\",\r\n        \"email\": \"kenmills12@gmail.com\",\r\n        \"age\": 42,\r\n        \"addresses\": [\r\n            {\r\n                \"addressLine1\": \"22nd Cross Main Street Delware, USA\",\r\n                \"zip\": 102341\r\n            }\r\n        ],\r\n        \"joiningDate\": \"2023-01-16T23:10:25.123\",\r\n        \"gender\": \"Male\"\r\n    },\r\n     {\r\n        \"id\": 1006,\r\n        \"firstName\": \"Pritam\",\r\n        \"lastName\": \"Kumar\",\r\n        \"email\": \"pritam88@gmail.com\",\r\n        \"age\": 28,\r\n        \"addresses\": [\r\n            {\r\n                \"addressLine1\": \"23rd Cross HSR Layout Bangalore\",\r\n                \"zip\": 560038\r\n            }\r\n        ],\r\n        \"joiningDate\": \"2023-01-10T23:10:25.123\",\r\n        \"gender\": \"Male\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/employee/bulk",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"bulk"
 					]
 				}
 			},

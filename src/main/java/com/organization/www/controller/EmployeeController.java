@@ -72,5 +72,11 @@ public class EmployeeController {
         SearchHits<Employee> searchHits = service.searchByNameUsingQuery(firstName);
         return new ResponseEntity<>(searchHits, HttpStatus.OK);
     }
+
+    @PostMapping("/bulk")
+    public ResponseEntity<List<String>> bulkUpload(@RequestBody List<Employee> list) {
+        List<String> idList = service.bulkUpload(list);
+        return new ResponseEntity<>(idList, HttpStatus.OK);
+    }
 }
 
